@@ -1,0 +1,75 @@
+% ------------------------------------------
+% PREAMBLE – Hochschule Trier (XeLaTeX)
+% ------------------------------------------
+\usepackage[a4paper, left=3cm, right=2.5cm, top=3cm, bottom=3cm]{geometry}
+
+% Font-Setup
+\usepackage{fontspec}
+\setmainfont{Noto Serif} % oder "Times New Roman" falls gewünscht
+\setsansfont{Noto Sans}
+\setmonofont{Inconsolata} % frei verfügbar, Overleaf-kompatibel
+
+% Sprache & Typografie
+\usepackage{polyglossia}
+\setdefaultlanguage{german}
+\setotherlanguage{english}
+\usepackage{microtype}
+\usepackage{csquotes}
+\usepackage{setspace}
+\onehalfspacing % 1,5-zeilig, Standard für Bachelorarbeiten
+
+% Tabellen, Abbildungen, Formatierungen
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\hypersetup{
+    pdftitle={Analyse und Bewertung von Cloud- und On-Premise-Infrastrukturen},
+    pdfauthor={David Schuh},
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue,
+    citecolor=black
+}
+
+% Literaturverwaltung (BibLaTeX + Biber)
+\usepackage[style=apa, backend=biber]{biblatex}
+\DeclareLanguageMapping{ngerman}{ngerman-apa}
+\addbibresource{bib/literature.bib}
+
+% Nummerierung und TOC
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+% Abkürzungsverzeichnis (optional)
+\usepackage[printonlyused]{acronym}
+
+% ------------------------------------------
+% Kopf- und Fußzeilen – Hochschule Trier
+% ------------------------------------------
+\usepackage{scrlayer-scrpage}
+
+% alle vorhandenen Kopf-/Fußdefinitionen löschen
+\clearpairofpagestyles
+
+% -------------------
+% Position der Seitenzahlen
+% -------------------
+% Kopfzeile: Kapitelüberschrift links, Seitenzahl rechts
+\cfoot{\pagemark}  
+
+% oder, wenn du es ruhiger willst:
+% \cfoot{\pagemark}   % Seitenzahl unten zentriert, keine Kopfzeile
+
+% Schriftart im Kopf/Fuß
+\setkomafont{pageheadfoot}{\normalfont\small}
+
+% Standard-Seitenstil aktivieren
+\pagestyle{scrheadings}
+
+% auch für "plain"-Seiten (z. B. Abstract, TOC) Seitenzahlen erzwingen:
+\renewcommand{\chapterpagestyle}{scrheadings}
+\renewcommand{\partpagestyle}{scrheadings}
+

@@ -1,0 +1,54 @@
+% !TeX program = xelatex
+\documentclass[a4paper,12pt,oneside]{scrreprt}
+\input{preamble}
+\input{metadata}
+
+\begin{document}
+
+% --- TITELBLATT (ohne Seitenzahl) ---
+\pagestyle{empty}
+\input{frontmatter/titlepage}
+\clearpage
+
+% --- KURZFASSUNG (römische Zählung) ---
+\pagenumbering{Roman}
+\setcounter{page}{1}
+\pagestyle{scrheadings}
+\input{frontmatter/abstract}
+\clearpage
+
+% --- INHALTS- UND OPTIONALE VERZEICHNISSE ---
+\tableofcontents
+\clearpage
+% \listoffigures
+% \listoftables
+% \clearpage
+% \input{frontmatter/abkuerzungen} % falls vorhanden
+
+% --- HAUPTTEIL (arabische Zählung) ---
+\cleardoublepage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\pagestyle{scrheadings}
+
+\input{sections/01_einleitung}       % 2-3 Seiten
+\input{sections/02_grundlagen}       % 8-10 Seiten 
+\input{sections/03_aufgabenstellung} % 5-6 Seiten
+\input{sections/04_hauptteil}        % 10-12 Seiten 
+\input{sections/05_evaluierung}      % 6-8 Seiten 
+\input{sections/06_fazit}            % 2-3 Seiten 
+                                     % ≈ 33–42 Seiten
+% --- LITERATUR ---
+\clearpage
+\printbibliography[heading=bibintoc,title=Literaturverzeichnis]
+
+% --- ANHANG ---
+\clearpage
+\appendix
+\input{appendix/appendix}
+
+% --- EIGENSTÄNDIGKEITSERKLÄRUNG ---
+\clearpage
+\input{frontmatter/declaration}
+
+\end{document}
